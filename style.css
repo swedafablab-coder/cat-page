@@ -82,3 +82,129 @@ body {
         transform: translate3d(4px, 0, 0);
     }
 }
+
+#score-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-family: 'Courier New', monospace;
+    /* Digital/Retro feel */
+    text-shadow: 2px 2px 0 #000;
+    z-index: 20;
+    pointer-events: none;
+}
+
+#score {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#rank {
+    font-size: 1.5rem;
+    margin-top: 5px;
+    color: #ffd700;
+    /* Gold for rank */
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    /* White squares like tofu/hair */
+    pointer-events: none;
+    z-index: 15;
+    animation: flyOut 0.8s ease-out forwards;
+}
+
+@keyframes flyOut {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(var(--tx), var(--ty)) rotate(var(--rot));
+        opacity: 0;
+    }
+}
+
+#hp-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: #333;
+    z-index: 30;
+}
+
+#hp-bar {
+    width: 100%;
+    height: 100%;
+    background: #00ff00;
+    transition: width 0.1s linear, background 0.3s;
+}
+
+#hp-label {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: white;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #000;
+    z-index: 30;
+}
+
+/* Game Over Screen */
+#game-over-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color: white;
+    font-family: 'Courier New', monospace;
+}
+
+#game-over-screen.hidden {
+    display: none;
+}
+
+#game-over-screen h1 {
+    font-size: 4rem;
+    color: #ff0000;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #ff0000;
+}
+
+#retry-btn {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    background: white;
+    border: none;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+#retry-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Roundness effect on image */
+.full-screen-image.getting-round {
+    border-radius: 50% !important;
+    transition: border-radius 0.5s ease-in;
+    transform: scale(0.8);
+}

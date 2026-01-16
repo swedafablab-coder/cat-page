@@ -10,6 +10,23 @@
 
 <body>
     <img src="kakugari.png" alt="Kakugari" class="full-screen-image">
+    <div id="score-container">
+        <div id="score">角刈り力: 0</div>
+        <div id="rank">称号: 見習い</div>
+    </div>
+
+    <div id="hp-container">
+        <div id="hp-bar"></div>
+        <div id="hp-label">SQUARENESS</div>
+    </div>
+
+    <div id="game-over-screen" class="hidden">
+        <h1>GAME OVER</h1>
+        <p id="final-stats"></p>
+        <p>Your cat became round.</p>
+        <button id="retry-btn">RETRY (Training)</button>
+    </div>
+
     <div id="overlay-text" class="hidden"></div>
     <script src="script.js"></script>
 </body>
